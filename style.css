@@ -1,0 +1,68 @@
+.Tema {
+  background-color: black;
+  color: white;
+}
+
+.head {
+  grid-area: head;
+  margin-left: 90px;
+  margin-right: 100px;
+  margin-bottom: 10px;
+}
+
+.dprov {
+  grid-area: dprov;
+  margin-top: -50px;
+  margin-left: 90px;
+  margin-right: 100px;
+}
+.dkot {
+  grid-area: dkot;
+  margin-top: -50px;
+  margin-left: 90px;
+  margin-right: 100px;
+}
+
+.dhasil {
+  grid-area: dhasil;
+  margin-bottom: 10px;
+  margin-top: -10px;
+}
+
+.mode {
+  grid-area: mode;
+  margin-top: 50px;
+  margin-left: 90px;
+  margin-right: 100px;
+}
+.container {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: 1fr;
+  grid-auto-columns: 1fr;
+  grid-auto-rows: 1fr;
+  gap: 0px 0px;
+  grid-auto-flow: row;
+  grid-template-areas: "Lab7";
+  position: center;
+  border-radius: 10px;
+  background-image: linear-gradient(to right, #0008ff, #ff0000);
+  margin-top: 20px;
+  border: 2px solid rgb(120, 211, 16);
+  margin-right: 500px;
+  margin-left: 400px;
+}
+
+.Lab7 {
+  display: grid;
+  grid-template-columns: 300px 300px;
+  grid-template-rows: 200px 50px 100px;
+  gap: 10px 21px;
+  grid-auto-flow: row;
+  grid-template-areas:
+    "head head"
+    "dprov dkot"
+    "dhasil dhasil"
+    "mode mode";
+  grid-area: Lab7;
+}

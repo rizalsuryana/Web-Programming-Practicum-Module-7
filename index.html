@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lab-7 105216031</title>
+    </head>
+    <body>
+      <div class="container" style="text-align:center;">
+        <div class="Lab7">
+            <div class="head">
+        <h1>Provinsi Indonsia</h1>
+            </div>
+        <script>
+          var Provinsi = {
+            DKI_Jakarta: ["Jakarta Selatan", "Jakarta Pusat", "Jakarta Barat", "Jakarta Timur", "Jakarta Utara"],
+            Jawa_Barat: ["Depok", "Bogor", "Bekasi", "Sukabumi", "Sumedang", "Tasikmalaya", "Ci Amis", "Pangandaran"],
+            Jawa_Tengah: [ "Salatiga", "Surakarta", "Tegal", "Pati", "Semarang", "Solo", "Kudus"],
+            Jawa_Timur: ["Madiun", "Mojokerto", "Malang", "Surabaya", "Kediri", "Batu", "Bojonegoro"],
+          };
+          window.onload = function () {
+            var PilihProvinsi = document.getElementById("PilihProvinsi"),
+              PilihKota = document.getElementById("PilihKota");
+            for (var type in Provinsi) {
+              PilihProvinsi.options[PilihProvinsi.options.length] = new Option(type, type);
+            }
+            PilihProvinsi.onchange = function () {
+              PilihKota.length = 1;
+              if (this.selectedIndex < 1) return;
+                var ft = Provinsi[this.value];
+              for (var field in Provinsi[this.value]) {
+                PilihKota.options[PilihKota.options.length] = new Option( ft[field],field);
+              }
+            };
+            PilihProvinsi.onchange();
+          };
+          function submit() {
+            var PilihProvinsi = document.getElementById("PilihProvinsi").value,
+              PilihKota = document.getElementById("PilihKota").value,
+              output = document.getElementById("output");
+            console.log(PilihProvinsi, PilihKota);
+            output.innerText ="Pada Provinsi : " +PilihProvinsi +" ada Kota : " +Provinsi[PilihProvinsi][PilihKota];
+          }
+          function myFunction() {
+            var element = document.body;
+            element.classList.toggle("Tema");
+          }
+        </script>
+  
+        <br>
+        <div class="dprov">
+        <select name="boxprov" id="PilihProvinsi" size="1">
+          <option selected="selected">Pilih Provinsi</option> 
+        </select>
+    </div>
+        <br>
+        <div class="dkot">
+        <select onchange="submit()" name="boxkot" id="PilihKota" size="1">
+          <option selected="selected">Pilih kota</option>
+        </select>
+    </div>
+        <br><br>
+        <div class="dhasil">
+        <p id="output" style="border: 3px solid rgb(43, 255, 0); background-color: rgb(255, 5, 5); display:inline"> Output Heading</p>
+        <br>
+        <div class="mode">
+        <button onclick="myFunction()">Ubah Tema</button>
+    </div>
+    </div>
+    </div>
+    </body>
+  </html>
+
+
+
+
